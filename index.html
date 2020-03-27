@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Rock Paper Scissors - in console</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<script type="text/javascript">
+
+		function playerPlay() {
+			let playerSelection = prompt("Rock, paper, scissors - best out of 5!").toLowerCase();
+			console.log("You chose " + playerSelection);
+			return playerSelection;
+		}
+
+		function computerPlay() {
+			let computerChoices = ["rock", "paper", "scissors"]
+			let computerSelection = computerChoices[Math.floor(Math.random() * 3)];
+			console.log("The Computer chose " + computerSelection);
+			return computerSelection;
+		}
+
+		function playRound(playerSelection, computerSelection) {
+			playerSelection = playerPlay();
+			computerSelection = computerPlay();
+			let winner;
+			let result;
+			if (playerSelection == computerSelection) {
+				winner = "draw";
+				result = "It's a draw!";
+			} else if (playerSelection === "rock" && computerSelection === "paper") {
+				winner = "computerWins";
+				result = "You lose, paper covers rock!";
+			} else if (playerSelection === "rock" && computerSelection === "scissors") {
+				winner = "playerWins";
+				result = "You win, rock crushes scissors!";
+			} else if (playerSelection === "paper" && computerSelection === "scissors") {
+				winner = "computerWins";
+				result = "You lose, scissors cuts paper!";
+			} else if (playerSelection === "paper" && computerSelection === "rock") {
+				winner = "playerWins";
+				result = "You win, paper covers rock!";
+			} else if (playerSelection === "scissors" && computerSelection === "rock") {
+				winner = "computerWins";
+				result = "You lose, rock crushes paper!";
+			} else if (playerSelection === "scissors" && computerSelection === "paper") {
+				winner = "playerWins";
+				result = "You win, scissors cuts paper!";
+			}
+			return result;
+			return winner;
+		}
+					
+		function game() {	
+			let winner;
+			let score = 0;
+			let finalScore;
+			console.log(playRound());
+
+			if (winner === 'playerWins') {
+				++score
+			}
+			console.log(playRound());
+			if (winner === 'playerWins') {
+				++score
+			}
+			console.log(playRound());
+			if (winner === 'playerWins') {
+				++score
+			}
+			console.log(playRound());
+			if (winner === 'playerWins') {
+				++score
+			}
+			console.log(playRound());
+			if (winner === 'playerWins') {
+				++score
+			}
+			
+			if (score >= 3) {
+				finalScore = 'Congrats - you won!';
+			} else {
+				finalScore = 'The Computer wins, this time...'
+			}
+			return finalScore;
+		}
+
+	console.log(game());
+	
+	</script>
+</body>
+</html>
