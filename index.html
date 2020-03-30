@@ -34,15 +34,15 @@
 			} else if (playerSelection === "rock" && computerSelection === "scissors") {
 				winner = "playerWins";
 				result = "You win, rock crushes scissors!";
-			} else if (playerSelection === "paper" && computerSelection === "scissors") {
-				winner = "computerWins";
-				result = "You lose, scissors cuts paper!";
 			} else if (playerSelection === "paper" && computerSelection === "rock") {
 				winner = "playerWins";
 				result = "You win, paper covers rock!";
+			} else if (playerSelection === "paper" && computerSelection === "scissors") {
+				winner = "computerWins";
+				result = "You lose, scissors cuts paper!";
 			} else if (playerSelection === "scissors" && computerSelection === "rock") {
 				winner = "computerWins";
-				result = "You lose, rock crushes paper!";
+				result = "You lose, rock crushes scissors!";
 			} else if (playerSelection === "scissors" && computerSelection === "paper") {
 				winner = "playerWins";
 				result = "You win, scissors cuts paper!";
